@@ -1,0 +1,83 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  email    String @unique
+  password String
+  name     String
+  surname  String
+  phone    String
+
+  contracts Contract[]
+}
+
+model Teacher {
+  id    Int    @id @default(autoincrement())
+  title String
+  bio   String
+
+  services Service[]
+}
+
+model Service {
+  id        Int @id @default(autoincrement())
+  teacherId Int
+
+  name        String
+  description String
+  serviceType String
+  category    String // deporte, arte, idiomas, música, cocina, manualidades, baile, otros
+  type        String // individual, grupal
+  frequency   String // única, semanal, mensual
+  duration    Int
+  price       Int
+  published   Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  teacher   Teacher    @relation(fields: [teacherId], references: [id])
+  comments  Comment[]
+  contracts Contract[]
+}
+
+model Comment {
+  id        Int @id @default(autoincrement())
+  serviceId Int
+
+  comment  String
+  rejected Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  service Service @relation(fields: [serviceId], references: [id])
+}
+
+model Contract {
+  id        Int @id @default(autoincrement())
+  serviceId Int
+  userId    Int
+
+  phone  String
+  email  String
+  time   String
+  text   String
+  status String // solicitada, aceptada, finalizada, cancelada
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user    User    @relation(fields: [userId], references: [id])
+  service Service @relation(fields: [serviceId], references: [id])
+}
