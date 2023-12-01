@@ -1,4 +1,3 @@
-// @bun
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getProtoOf = Object.getPrototypeOf;
@@ -5284,8 +5283,8 @@ More Information: https://pris.ly/d/execute-raw
     };
   });
   var mi = K((jf, Yo) => {
-    var Nu = import.meta.require("os"),
-      zo = import.meta.require("tty"),
+    var Nu = __require("os"),
+      zo = __require("tty"),
       Ee = ci(),
       { env: H } = process,
       Ge;
@@ -5368,8 +5367,8 @@ More Information: https://pris.ly/d/execute-raw
     };
   });
   var Xo = K((ee, Hr) => {
-    var $u = import.meta.require("tty"),
-      Jr = import.meta.require("util");
+    var $u = __require("tty"),
+      Jr = __require("util");
     ee.init = Qu;
     ee.log = Bu;
     ee.formatArgs = ju;
@@ -5496,7 +5495,7 @@ More Information: https://pris.ly/d/execute-raw
       Xt = "\x1B]",
       Rt = "\x07",
       en = ";",
-      us = false;
+      us = process.env.TERM_PROGRAM === "Apple_Terminal";
     R.cursorTo = (e, t) => {
       if (typeof e != "number")
         throw new TypeError("The `x` argument is required");
@@ -5714,9 +5713,9 @@ More Information: https://pris.ly/d/execute-raw
     };
   });
   var As = K((jg, sn) => {
-    var gc = import.meta.require("fs"),
-      _s = import.meta.require("path"),
-      yc = import.meta.require("os"),
+    var gc = __require("fs"),
+      _s = __require("path"),
+      yc = __require("os"),
       hc = Cs(),
       xc = hc.version,
       bc =
@@ -6165,11 +6164,11 @@ More Information: https://pris.ly/d/execute-raw
   var ng = $(45, 49);
   var ig = $(46, 49);
   var og = $(47, 49);
-  var as = I(import.meta.require("fs"));
+  var as = I(__require("fs"));
   var Yr = "libquery_engine";
-  var bs = I(import.meta.require("child_process"));
-  var Ci = I(import.meta.require("fs/promises"));
-  var rn = I(import.meta.require("os"));
+  var bs = I(__require("child_process"));
+  var Ci = I(__require("fs/promises"));
+  var rn = I(__require("os"));
   var je = Symbol.for("@ts-pattern/matcher");
   var Wu = Symbol.for("@ts-pattern/isVariadic");
   var Xr = "@ts-pattern/anonymous-select-key";
@@ -6398,7 +6397,7 @@ More Information: https://pris.ly/d/execute-raw
       return this;
     }
   };
-  var ws = import.meta.require("util");
+  var ws = __require("util");
   var ys = I(gs());
   var ec = { warn: Ae("prisma:warn") };
   var tc = { warn: () => !process.env.PRISMA_DISABLE_WARNINGS };
@@ -6437,12 +6436,12 @@ More Information: https://pris.ly/d/execute-raw
     "arm",
   ];
   var Si = I(As());
-  var an = I(import.meta.require("fs"));
-  var kt = I(import.meta.require("path"));
+  var an = I(__require("fs"));
+  var kt = I(__require("path"));
   var Mi = L("prisma:tryLoadEnv");
   var ks = "library";
   var Rc = I(ki());
-  var q = I(import.meta.require("path"));
+  var q = I(__require("path"));
   var Mc = I(ki());
   var Zg = L("prisma:engines");
   q.default.join(__dirname, "../query-engine-darwin");
@@ -6481,9 +6480,9 @@ More Information: https://pris.ly/d/execute-raw
   q.default.join(__dirname, "../libquery_engine-rhel-openssl-1.1.x.so.node");
   q.default.join(__dirname, "../libquery_engine-rhel-openssl-3.0.x.so.node");
   q.default.join(__dirname, "../query_engine-windows.dll.node");
-  var Ii = I(import.meta.require("fs"));
+  var Ii = I(__require("fs"));
   var $s = L("chmodPlusX");
-  var ir = I(import.meta.require("path"));
+  var ir = I(__require("path"));
   var js = I(Ni());
   var Li = class {
     constructor(t) {
@@ -6686,10 +6685,10 @@ ${(0, js.default)(kc(n), 2)}
     rollback: Ze(e, t.rollback.bind(t)),
     dispose: Vc(e, t.dispose.bind(t)),
   });
-  var du = import.meta.require("async_hooks");
-  var mu = import.meta.require("events");
-  var fu = I(import.meta.require("fs"));
-  var Vr = I(import.meta.require("path"));
+  var du = __require("async_hooks");
+  var mu = __require("events");
+  var fu = I(__require("fs"));
+  var Vr = I(__require("path"));
   var me = class e {
     constructor(t, r) {
       if (t.length - 1 !== r.length)
@@ -6751,7 +6750,7 @@ ${(0, js.default)(kc(n), 2)}
       return this.set(t, i), i;
     }
   };
-  var Zs = import.meta.require("util");
+  var Zs = __require("util");
   var mn = { enumerable: true, configurable: true, writable: true };
   var zs = Symbol.for("nodejs.util.inspect.custom");
   var Dt = class {
@@ -8312,7 +8311,7 @@ ${(0, js.default)(kc(n), 2)}
       r,
     );
   var Ia = I(Ni());
-  var ka = I(import.meta.require("fs"));
+  var ka = I(__require("fs"));
   var Aa = {
     keyword: He,
     entity: He,
@@ -8821,8 +8820,8 @@ ${(0, js.default)(kc(n), 2)}
   var Wa = L("prisma:client");
   var za = { Vercel: "vercel", "Netlify CI": "netlify" };
   var Kt = class {};
-  var nl = I(import.meta.require("fs"));
-  var vr = I(import.meta.require("path"));
+  var nl = I(__require("fs"));
+  var vr = I(__require("path"));
   var Md = L("prisma:client:engines:resolveEnginePath");
   var Sd = () => new RegExp("runtime[\\\\/]library\\.m?js$");
   var co = I(ji());
@@ -9360,8 +9359,8 @@ ${r}`,
       if (r) throw r;
     }
   };
-  var vo = I(import.meta.require("os"));
-  var xl = I(import.meta.require("path"));
+  var vo = I(__require("os"));
+  var xl = I(__require("path"));
   var Po = Symbol("PrismaLibraryEngineCache");
   var bl = {
     async loadLibrary(e) {
@@ -10665,7 +10664,7 @@ var require_client = __commonJS((exports) => {
     JsonNull: objectEnumValues2.classes.JsonNull,
     AnyNull: objectEnumValues2.classes.AnyNull,
   };
-  var path = import.meta.require("path");
+  var path = __require("path");
   exports.Prisma.TransactionIsolationLevel = makeStrictEnum2({
     Serializable: "Serializable",
   });
@@ -10774,7 +10773,7 @@ var require_client = __commonJS((exports) => {
       "128f369bf70feaac3c00f3106db88e4005dcd08421c78ac5c7940bb40aa63625",
     noEngine: false,
   };
-  var fs = import.meta.require("fs");
+  var fs = __require("fs");
   config.dirname = __dirname;
   if (!fs.existsSync(path.join(__dirname, "schema.prisma"))) {
     const alternativePaths = ["node_modules/.prisma/client", ".prisma/client"];
