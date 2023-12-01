@@ -1,6 +1,7 @@
 {
   "scripts": {
     "dev": "bun run --hot src/index.ts",
+    "install": "bun prisma generate",
     "build": "bun bun src/index.ts --target=node --outdir=dist",
     "start": "bun dist/index.js"
   },
