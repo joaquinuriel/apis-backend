@@ -13,9 +13,9 @@ datasource db {
 model User {
   id       Int    @id @default(autoincrement())
   email    String @unique
-  password String
+  hash     String
   name     String
-  surname  String
+  lastname String
   phone    String
 
   contracts Contract[]
@@ -35,7 +35,6 @@ model Service {
 
   name        String
   description String
-  serviceType String
   category    String // deporte, arte, idiomas, música, cocina, manualidades, baile, otros
   type        String // individual, grupal
   frequency   String // única, semanal, mensual
