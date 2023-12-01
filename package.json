@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "build": "bun build --minify --splitting ./src/index.ts --outdir=dist",
+    "start": "bun dist/index.js"
   },
   "dependencies": {
     "@prisma/client": "^5.6.0",
